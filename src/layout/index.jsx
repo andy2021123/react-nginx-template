@@ -40,7 +40,7 @@ export default function Layout() {
       <Box component="nav">
         <AppBar>
           <Toolbar>
-            <Typography variant="h4" sx={{ flexGrow: 1 }}>React Express Template</Typography>
+            <Typography variant="h4" sx={{ flexGrow: 1 }}>React Nginx Template</Typography>
             <NavBar/>
           </Toolbar>
         </AppBar>

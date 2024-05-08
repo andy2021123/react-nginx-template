@@ -10,17 +10,11 @@ export default defineConfig({
     watch: {
       usePolling: true
     },
-    proxy: {
-      '/api': {
-        target: process.env.REACT_APP_PROXY || 'http://localhost:5000',
-        changeOrigin: true
-      }
-    }
   },
   resolve: {
     alias: {
       src: "/src",
-    }
-  }
+    },
+  },
 })
 
