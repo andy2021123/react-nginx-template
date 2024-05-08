@@ -5,7 +5,7 @@ environment := development
 ifeq ($(wildcard /var/www/),)
 	BUILD := @echo The folder "/var/www" doesn't exist. If you want to deploy the app to a container instead, use "make deploy"
 else
-	BUILD := cp -r dist /var/www/$(app_url)
+	BUILD := sudo cp -r dist /var/www/$(app_url)
 endif
 
 
@@ -30,6 +30,6 @@ deploy:
 	make logs
 
 build:
-	npm install
-	npm run build
+	@npm install
+	@npm run build
 	$(BUILD)
