@@ -30,5 +30,6 @@ deploy:
 	make logs
 
 build:
+	npm install
 	npm run build
 	$(BUILD)
