@@ -1,6 +1,6 @@
-# Getting Started with react-express-template
+# Getting Started with react-nginx-template
 
-This is a template full-stack application with React.js as the frontend, Express.js as the backend, PostgreSQL as the database, and is containerized with Docker. 
+This is a template frontend-only single page application with React.js that is served by nginx in either a docker container or on an origin server. 
 
 ## Dependencies
 
@@ -24,6 +24,8 @@ Copy the environment variables example file with `cp .env.example .env`. Fill wi
 
 ## Running the Application
 
+### With Docker
+
 `make up` starts the client and server in development mode.
 
 `make logs` opens logs for all current running containers.
@@ -32,8 +34,6 @@ Copy the environment variables example file with `cp .env.example .env`. Fill wi
 
 `make deploy` runs the app in production mode (and builds the app if not already done).
 
-## Using the Database
+### With Nginx
 
-`make psql environment=${environment}` opens psql at the command line for the specified database if its container is currently running.
-
-`make dump environment=${environment}` dumps the database to a .sql file for use in initializing the database in the future if desired. After created, the database already persists over time; so, you would need to delete the database/pgdata/${environment} folder for it to be able to be initialized with another .sql file.
+`make build` builds the app and copies the static production files to the /var/www/${app_url} folder to be served by Nginx. 
