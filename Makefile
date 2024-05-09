@@ -1,11 +1,14 @@
-CLIENT_PORT := 3000
-app_url := example.com
-environment := development
+ifneq ($(wildcard .env),) 
+	include .env
+endif
+
+CLIENT_PORT ?= 3000
+APP_URL ?= example.com
 
 ifeq ($(wildcard /var/www/),)
 	BUILD := @echo The folder "/var/www" doesn't exist. If you want to deploy the app to a container instead, use "make deploy"
 else
-	BUILD := sudo rm -rf /var/www/$(app_url) && sudo cp -rT dist /var/www/$(app_url)
+	BUILD := sudo rm -rf /var/www/$(APP_URL) && sudo cp -rT dist /var/www/$(APP_URL)
 endif
 
 
