@@ -5,7 +5,7 @@ environment := development
 ifeq ($(wildcard /var/www/),)
 	BUILD := @echo The folder "/var/www" doesn't exist. If you want to deploy the app to a container instead, use "make deploy"
 else
-	BUILD := sudo cp -r dist /var/www/$(app_url)
+	BUILD := sudo rm -r /var/www/$(app_url) && sudo cp -rT dist /var/www/$(app_url)
 endif
 
 
