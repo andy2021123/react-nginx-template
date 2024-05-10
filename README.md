@@ -36,4 +36,4 @@ Copy the environment variables example file with `cp .env.example .env`. Fill wi
 
 ### With Nginx
 
-`make build` builds the app and copies the static production files to the /var/www/${app_url} folder to be served by Nginx. 
+`make build` builds the app and copies the static production files to the /var/www/${APP_URL} folder to be served by Nginx. 
